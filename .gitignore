@@ -1,0 +1,45 @@
+# ─── Input / sensitive documents ──────────────────────────────────────────────
+# source document is not committed (may contain real PII)
+input/*
+!input/.gitkeep
+
+# ─── Generated outputs ────────────────────────────────────────────────────────
+# redacted DOCX and audit CSV stay local
+out/redacted/
+out/rendered/
+out/submission/
+out/audit/
+!out/reports/
+generate_submission.py
+deep_analysis.py
+compare_docs.py
+
+
+# docs folder - internal design notes, not part of submission
+docs/
+
+# Common binary / generated files
+*.docx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.zip
+
+# Assigement folder
+Assigement/
+
+# ─── Python / runtime ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# ─── OS / editor ──────────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp

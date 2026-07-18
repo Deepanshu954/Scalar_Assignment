@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "match_policy": "Strict exact normalized entity type and text. Partial same-type overlaps count as FP plus FN and are also reported as boundary errors.",
+  "cases": [
+    {
+      "name": "prospectus_contact_block",
+      "source": "public prospectus excerpt",
+      "text": "Registered Office: 11/3, 11/4 and 11/5, Village Birdewadi, Chakan Taluka - Khed, Pune - 410 501, Maharashtra, India; Contact Person: Sarthak Malvadkar, Company Secretary and Compliance Officer; Telephone: + 91 20 4505 3237; E-mail: cs.connect@kshinternational.com; Website: www.kshinternational. com",
+      "labels": [
+        {"type": "address", "text": "11/3, 11/4 and 11/5, Village Birdewadi, Chakan Taluka - Khed, Pune - 410 501, Maharashtra, India"},
+        {"type": "person", "text": "Sarthak Malvadkar"},
+        {"type": "phone", "text": "+ 91 20 4505 3237"},
+        {"type": "email", "text": "cs.connect@kshinternational.com"},
+        {"type": "url", "text": "www.kshinternational. com"}
+      ]
+    },
+    {
+      "name": "lead_manager_contacts",
+      "source": "public prospectus-style lead manager table excerpt",
+      "text": "Nuvama Wealth Management Limited, Contact Person: Lokesh Shah. ICICI Securities Limited, Contact Person: Kishan Rastogi. E-mail: ksh@icicisecurities.com Tel: +91 22 6807 7100 Website: www.icicisecurities.com",
+      "labels": [
+        {"type": "company", "text": "Nuvama Wealth Management Limited"},
+        {"type": "person", "text": "Lokesh Shah"},
+        {"type": "company", "text": "ICICI Securities Limited"},
+        {"type": "person", "text": "Kishan Rastogi"},
+        {"type": "email", "text": "ksh@icicisecurities.com"},
+        {"type": "phone", "text": "+91 22 6807 7100"},
+        {"type": "url", "text": "www.icicisecurities.com"}
+      ]
+    },
+    {
+      "name": "promoters_and_company",
+      "source": "public prospectus-style promoter excerpt",
+      "text": "The Promoters are Kushal Subbayya Hegde, Rajesh Kushal Hegde and Waterloo Industrial Park VI Private Limited.",
+      "labels": [
+        {"type": "person", "text": "Kushal Subbayya Hegde"},
+        {"type": "person", "text": "Rajesh Kushal Hegde"},
+        {"type": "company", "text": "Waterloo Industrial Park VI Private Limited"}
+      ]
+    },
+    {
+      "name": "synthetic_structured_ids",
+      "source": "synthetic helper data",
+      "text": "DOB: 03/09/1992. SSN: 123-45-6789. Card: 4111 1111 1111 1111. Login IP 192.168.1.10. API key: fk_test_94f8a12b0e9c3d4f8a12b0e9.",
+      "labels": [
+        {"type": "dob", "text": "03/09/1992"},
+        {"type": "ssn", "text": "123-45-6789"},
+        {"type": "credit_card", "text": "4111 1111 1111 1111"},
+        {"type": "ip_address", "text": "192.168.1.10"},
+        {"type": "api_key", "text": "fk_test_94f8a12b0e9c3d4f8a12b0e9"}
+      ]
+    },
+    {
+      "name": "negative_public_legal_terms",
+      "source": "public/legal negative examples",
+      "text": "SEBI and NSE are public market institutions. The Offer Price and Bid Lot will be decided later. December 18, 2025 is an offer date, not a DOB. Section 32 of the Companies Act, 2013 applies.",
+      "labels": []
+    },
+    {
+      "name": "type_ambiguity_guard",
+      "source": "synthetic helper data",
+      "text": "Contact Person: Mira Kapoor. Annapurna Family Trust and Greenfield Capital Private Limited are legal entities.",
+      "labels": [
+        {"type": "person", "text": "Mira Kapoor"},
+        {"type": "company", "text": "Greenfield Capital Private Limited"}
+      ]
+    }
+  ]
+}
