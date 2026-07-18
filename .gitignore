@@ -5,18 +5,15 @@ input/*
 
 # ─── Generated outputs ────────────────────────────────────────────────────────
 # redacted DOCX and audit CSV stay local
-out/redacted/
-out/rendered/
 out/submission/
-out/audit/
+out/rendered/
 !out/reports/
 generate_submission.py
 deep_analysis.py
 compare_docs.py
 
 
-# docs folder - internal design notes, not part of submission
-docs/
+# docs folder - allowed for HLD/LLD
 
 # Common binary / generated files
 *.docx
